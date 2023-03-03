@@ -24,15 +24,13 @@
             for (let i = 0; i < 5; i++) {
                 playRound()
                 let playerSelection = prompt("Enter rock, paper, or scisors");
-                if (playerSelection == 'rock'){
-                    playerSelection = 0;
-                }
+                console.log(playerSelection.toLowerCase());
                 const computerSelection = getComputerChoice(randomValue);
                 if(playerSelection == computerSelection){
                     console.log("It was a tie!");
                 }
-                else ( playerSelection != computerSelection)
-                    console.log("Someone won!");
+                //else ( playerSelection != computerSelection)
+                    //console.log("Someone won!");
 
             }
         }
