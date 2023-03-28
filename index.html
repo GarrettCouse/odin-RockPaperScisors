@@ -11,7 +11,7 @@
         const randomValue = ['rock', 'paper', 'scisors']
         function getComputerChoice(randomValue){
             const random = Math.floor(Math.random() * randomValue.length);
-            console.log(random, randomValue[random]);
+            console.log(randomValue[random]);
                 }
 
 
@@ -24,15 +24,32 @@
             for (let i = 0; i < 5; i++) {
                 playRound()
                 let playerSelection = prompt("Enter rock, paper, or scisors");
+                console.log("You picked-");
                 console.log(playerSelection.toLowerCase());
+                console.log("The computer picked-");
                 const computerSelection = getComputerChoice(randomValue);
-                if(playerSelection == computerSelection){
-                    console.log("It was a tie!");
+                if(playerSelection == "rock" && computerSelection == 'paper') {
+                    console.log ('You win! Rock beats paper!');     
+                } else if (playerSelection == 'rock' && computerSelection == 'rock') {
+                    console.log ('Its a tie!');     
+                } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
+                    console.log ('You win! Rock beats scissors!');     
+                // User Chooses Paper
+                } else if(playerSelection == "paper" && computerSelection == 'rock') {
+                    console.log ('You win! Rock beats paper!');     
+                } else if (playerSelection == 'paper' && computerSelection == 'paper') {
+                    console.log ('Its a tie!');     
+                } else if (playerSelection == 'paper' && computerSelection == 'scissors') { 
+                    console.log ('You lose! Scissors beats paper!');  
+                // User Chooses Scissors
+                } else if(playerSelection == "scissors" && computerSelection == 'rock') {
+                    console.log ('You lose! Rock beats scissors!');     
+                } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+                    console.log ('You win! Scissors beats paper!');     
+                } else  { 
+                    console.log ('It is a tie!'); 
                 }
-                //else ( playerSelection != computerSelection)
-                    //console.log("Someone won!");
-
-            }
+          }
         }
         game();
     </script>
